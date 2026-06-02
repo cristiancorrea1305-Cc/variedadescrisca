@@ -1,0 +1,290 @@
+/* --- CONFIGURACIÓN GENERAL Y VARIABLES --- */
+:root {
+    --primary-color: #0d9488; /* Verde turquesa moderno */
+    --secondary-color: #1e293b; /* Gris oscuro elegante */
+    --accent-color: #25d366; /* Verde oficial de WhatsApp */
+    --bg-light: #f8fafc;
+    --text-main: #334155;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* --- SECCIÓN HÉROE (BIENVENIDA) --- */
+.hero {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.9), rgba(30, 41, 49, 0.95)), 
+                url('https://images.unsplash.com/photo-1472851294608-062f824d286b?q=80&w=1920') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: var(--transition);
+}
+
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* --- SECCIÓN DE PRODUCTOS --- */
+.products-section {
+    padding: 60px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* --- TARJETAS DE PRODUCTO --- */
+.product-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    position: relative;
+    background-color: #f1f5f9;
+    height: 250px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.product-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.btn-buy {
+    display: block;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: auto;
+    transition: var(--transition);
+}
+
+.btn-buy:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* --- PIE DE PÁGINA --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 50px 8% 30px;
+    text-align: center;
+}
+
+.motivation-phrase {
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #334155;
+    margin-bottom: 20px;
+}
+
+.copy {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background-color: #20ba5a;
+}
+
+/* --- RESPONSIVO PARA MÓVILES --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .products-section {
+        padding: 40px 5%;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
